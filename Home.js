@@ -30,6 +30,25 @@ export default function Home (){
 
                 </View>
 
+                <View style={styles.header}>
+
+                    <View>
+                        <Text style={styles.story}>
+                            OUR STORY
+                        </Text>
+                    </View>
+
+                    <View style={styles.farRight}>
+                        <View>
+                            <Image source={require("./assets/Listview.png")} style={styles.bag}/>
+
+                        </View>
+                        <View>
+                            <Image source={require("./assets/Filter.png")} style={styles.bag}/>
+                        </View>
+                    </View>
+                </View>
+
 
                 
             </View>
@@ -54,7 +73,8 @@ const styles = StyleSheet.create({
       header: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginBottom: 20
       },
 
       farRight: {
@@ -64,7 +84,14 @@ const styles = StyleSheet.create({
 
       bag: {
         marginLeft: 20
-      }
+      },
+
+      story: {
+        fontFamily: 'monospace',
+        fontSize: 20
+      },
+
+  
 
 
 
