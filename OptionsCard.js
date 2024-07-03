@@ -9,9 +9,9 @@ const OptionsCard = ({ item, addToCart}) => {
 
                 <Image source={item.icon1}/>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => addToCart(item)} >
                     <Image source={ require('./assets/add_circle.png')}  style={styles.addButton} 
-                     onPress={() => addToCart(item)}/>
+                     />
                 </TouchableOpacity>
 
                 <Text style={styles.itemType}>
@@ -31,9 +31,9 @@ const OptionsCard = ({ item, addToCart}) => {
             <View style={styles.rightOptions}>
 
                 <Image source={item.icon2}/>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => addToCart(item)}>
                     <Image source={ require('./assets/add_circle.png')} style={styles.addButton}
-                     onPress={() => addToCart(item)}/>
+                    />
                 </TouchableOpacity>
 
                 <Text style={styles.itemType}>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
 
     cardigan: {
-        fontWeight: '300',
+        fontWeight: '200',
         fontSize: 11,
         fontFamily: 'sans-serif',
         marginBottom: 5

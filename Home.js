@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Image, FlatList , TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import OptionsCard from './OptionsCard';
+import { CartContext } from './CartContext';
 
 
 export default function Home ( { navigation } ){
-
-    const [cart, setCart] = useState([]);
+    const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
     const options = [
         {id: 1, icon1: require('./assets/dress1.png'), icon2: require('./assets/dress2.png'), type1: 'Office Wear', type2: 'Black', price : '$120' },
@@ -14,18 +14,9 @@ export default function Home ( { navigation } ){
         {id: 4, icon1: require('./assets/dress7.png'), icon2: require('./assets/dress3.png'), type1: '21WN', type2: 'Lame', price : '$100' },
     ];
 
-    const addToCart = (item) => {
-        setCart([...cart, item]);
-    };
-
-    const removeFromCart = (itemId) => {
-        setCart(cart.filter(item => item.id !== itemId));
-    };
-
     const handleCartNavigation = () => {
-       navigation.navigate('Cart', { cart, removeFromCart })
-    }
-
+        navigation.navigate('Cart');
+    };
     return (
         <View style={styles.container}>
             <View style={styles.container1}>
@@ -79,7 +70,7 @@ export default function Home ( { navigation } ){
                 <FlatList 
                     data= {options}
                     showsVerticalScrollIndicator={false}
-                    renderItem={({ item }) => <OptionsCard item={item} />}
+                    renderItem={({ item }) => <OptionsCard item={item} addToCart={addToCart} />}
                     keyExtractor={item => item.id.toString()}
                 />
 
