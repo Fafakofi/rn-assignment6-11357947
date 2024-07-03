@@ -1,6 +1,6 @@
-import { View , StyleSheet , Text, Image } from "react-native";
+import { View , StyleSheet , Text, Image, TouchableOpacity } from "react-native";
 
-const OptionsCard = ({ item }) => {
+const OptionsCard = ({ item, addToCart}) => {
 
     return(
         <View style={styles.optionsView}>
@@ -8,6 +8,11 @@ const OptionsCard = ({ item }) => {
             <View style={styles.leftOptions}>
 
                 <Image source={item.icon1}/>
+
+                <TouchableOpacity>
+                    <Image source={ require('./assets/add_circle.png')}  style={styles.addButton} 
+                     onPress={() => addToCart(item)}/>
+                </TouchableOpacity>
 
                 <Text style={styles.itemType}>
                     {item.type1}
@@ -26,6 +31,10 @@ const OptionsCard = ({ item }) => {
             <View style={styles.rightOptions}>
 
                 <Image source={item.icon2}/>
+                <TouchableOpacity>
+                    <Image source={ require('./assets/add_circle.png')} style={styles.addButton}
+                     onPress={() => addToCart(item)}/>
+                </TouchableOpacity>
 
                 <Text style={styles.itemType}>
                     {item.type2}
@@ -55,7 +64,7 @@ const styles = StyleSheet.create({
     itemType: {
         fontFamily: 'serif',
         marginBottom: 5,
-        marginTop: 5
+       
     },
 
     cardigan: {
@@ -68,6 +77,11 @@ const styles = StyleSheet.create({
      price: {
         color: 'tomato',
         marginBottom: 5
+     },
+
+     addButton: {
+        bottom: 30,
+        left: 130
      }
 });
 

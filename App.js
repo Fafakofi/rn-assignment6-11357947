@@ -1,18 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 import Home from './Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Cart from './Cart';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Home />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
+          <Stack.Screen name="Cart" component={Cart} options={{headerShown: false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-
-  },
-});
