@@ -8,10 +8,15 @@ export default function Home ( { navigation } ){
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
     const options = [
-        {id: 1, icon1: require('./assets/dress1.png'), icon2: require('./assets/dress2.png'), type1: 'Office Wear', type2: 'Black', price : '$120' },
-        {id: 2, icon1: require('./assets/dress3.png'), icon2: require('./assets/dress4.png'), type1: 'Church Wear', type2: 'Lamerei', price : '$150' },
-        {id: 3, icon1: require('./assets/dress5.png'), icon2: require('./assets/dress6.png'), type1: '21WN', type2: 'Lopo', price : '$130' },
-        {id: 4, icon1: require('./assets/dress7.png'), icon2: require('./assets/dress3.png'), type1: '21WN', type2: 'Lame', price : '$100' },
+        {id: 1, icon: require('./assets/dress1.png'), type: 'Office Wear', price : '$120' },
+        {id: 2, icon: require('./assets/dress2.png'), type: 'Church Wear',  price : '$150' },
+        {id: 3, icon: require('./assets/dress3.png'), type: '21WN', price : '$130' },
+        {id: 4, icon: require('./assets/dress5.png'), type: '21WN',  price : '$100' },
+        {id: 5, icon: require('./assets/dress5.png'), type: 'Lame', price : '$100' },
+        {id: 6, icon: require('./assets/dress6.png'), type: 'Lame', price : '$100' },
+        {id: 7, icon: require('./assets/dress7.png'), type: 'Lame', price : '$100' },
+        {id: 8, icon: require('./assets/dress3.png'), type: 'Lame', price : '$100' },
+    
     ];
 
     const handleCartNavigation = () => {
@@ -72,6 +77,7 @@ export default function Home ( { navigation } ){
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item }) => <OptionsCard item={item} addToCart={addToCart} />}
                     keyExtractor={item => item.id.toString()}
+                    numColumns={2}
                 />
 
 

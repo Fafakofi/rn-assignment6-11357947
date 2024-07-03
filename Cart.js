@@ -27,12 +27,12 @@ export default function Cart({ route, navigation }) {
                     <View style={styles.cartItem}>
 
                         <View style={styles.cartImg}> 
-                            <Image source={item.icon1 || item.icon2} />
+                            <Image source={item.icon} />
 
                         </View>
 
                         <View>
-                            <Text style={styles.story}>{item.type1 || item.type2}</Text>
+                            <Text style={styles.story}>{item.type}</Text>
 
                                 <Text style={styles.cardigan}>
                                     Reversable angora cardigan

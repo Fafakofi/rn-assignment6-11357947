@@ -7,7 +7,7 @@ const OptionsCard = ({ item, addToCart}) => {
 
             <View style={styles.leftOptions}>
 
-                <Image source={item.icon1}/>
+                <Image source={item.icon}/>
 
                 <TouchableOpacity onPress={() => addToCart(item)} >
                     <Image source={ require('./assets/add_circle.png')}  style={styles.addButton} 
@@ -15,7 +15,7 @@ const OptionsCard = ({ item, addToCart}) => {
                 </TouchableOpacity>
 
                 <Text style={styles.itemType}>
-                    {item.type1}
+                    {item.type}
                 </Text>
 
                 <Text style={styles.cardigan}>
@@ -28,37 +28,16 @@ const OptionsCard = ({ item, addToCart}) => {
 
             </View>
 
-            <View style={styles.rightOptions}>
-
-                <Image source={item.icon2}/>
-                <TouchableOpacity onPress={() => addToCart(item)}>
-                    <Image source={ require('./assets/add_circle.png')} style={styles.addButton}
-                    />
-                </TouchableOpacity>
-
-                <Text style={styles.itemType}>
-                    {item.type2}
-                </Text>
-
-                <Text style={styles.cardigan}>
-                    Reversable angora cardigan
-                </Text>
-
-                <Text style={styles.price}>
-                    {item.price}
-                </Text>
-
-            </View>
+            
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     optionsView: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: 'space-between',
-        marginBottom: 12
+        marginRight:  10,
+        marginBottom: 12,
+        
     },
 
     itemType: {
